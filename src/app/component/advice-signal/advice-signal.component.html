@@ -1,0 +1,27 @@
+<div class="container advice-signal">
+    <h2> {{adviceList[2]?.Title }}</h2>
+    <h6> {{ stringToDate(adviceList[2]?.CreateDate) | date: 'd MMMM y' }}</h6>
+    <h6>{{clientName }}</h6>
+
+    <div class="row klantge-first">
+        <div class="col-sm-4">
+            <h4>Klangegevens</h4>
+        </div>
+        <div class="col-sm-8">
+            <div class="klantge" *ngFor="let data of adviceList[2]?.Klantgegevens?.Paramters">
+                <div class="klantge-paramname">{{data?.ParmName}}</div>
+                <div>&euro;{{data?.ParmValue}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row klantge-first">
+        <div class="col-sm-4">
+            <h4>Beschrijving</h4>
+        </div>
+        <div class="col-sm-8">
+            <p innerHTML="{{adviceList[2]?.Description }}"></p>
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" [routerLink]="['/']" class="btn btn-venster">Venster sluiten</button>
+    </div>

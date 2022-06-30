@@ -1,0 +1,39 @@
+{
+  "CreateDate": "20-11-2018",
+  "Title": "Belastingbesparing bij gedeeltelijk aflossen eigenwoningschuld",
+  "Status": 200,
+  "Klantgegevens": {
+    "Origin": "IB 2018",
+    "Paramters": [
+      {
+        "ParmName": "Woning rente",
+        "ParmValue": "36000"
+      },
+      {
+        "ParmName": "Belastbaar inkomen box 3",
+        "ParmValue": "110223"
+      },
+      {
+        "ParmName": "Belasting box3",
+        "ParmValue": "6647"
+      },
+      {
+        "ParmName": "Liquide middelen",
+        "ParmValue": "23801"
+      },
+      {
+        "ParmName": "Eigenwoning forfait",
+        "ParmValue": "91722"
+      },
+      {
+        "ParmName": "Eigenwoningschuld 31/12",
+        "ParmValue": "234256"
+      },
+      {
+        "ParmName": "Heffinsvrij vermogen + aftrekbare schulden",
+        "ParmValue": "83090"
+      }
+    ]
+  },
+  "Description": "Het kan fiscaal en financieel aantrekkelijk zijn om resterende eigenwoningschuld af te lossen met liquide middelen van box3.<br><br> Naast voordelen heeft het afslossen ook nadelen. Bijvoorbeeld de gevolgen van de bijleenregeling. Wanneer uw cliënt verhuist kan het nieuwe regime voor eigenwoningschulden toepassing vinden (dit regime is sinds 2013 van kracht)."
+}

@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebar [numberOfAdvice]="filterAdviceList.length"></app-sidebar>
+    </div>
+    <div class="col-sm-9 advies-content">
+      <h4 class="advies-heading">Adviessignalen </h4>
+      <div class="form-group advies-heading">
+        <span style="white-space: nowrap">
+          <label for="year">Filter op Jaar</label>
+          <select id="year" class="form-control" (change)="onChangeYear($event)">
+            <option *ngFor="let value of yearUniqueList" value="{{value}}">{{value}}</option>
+          </select>
+        </span>
+      </div>
+      <div class="advies-year">
+        <h4 class="year">{{showYear}}</h4>
+        <p>{{filterAdviceList.length}} adviessignalen</p>
+      </div>
+      <div class="advies-list" *ngFor="let advice of filterAdviceList">
+        <span>{{ stringToDate(advice.CreateDate) | date: 'd MMM y'}}</span>
+        <p [routerLink]="['advice-signal']" *ngIf="advice.Status == 100" class="advies-text advice-bold">
+          {{advice.Title}}</p>
+        <p [routerLink]="['advice-signal']" *ngIf="advice.Status == 200" class="advies-text">{{advice.Title}}</p>
+      </div>
+    </div>
+  </div>
+</div>
