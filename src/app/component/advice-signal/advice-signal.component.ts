@@ -12,7 +12,8 @@ import { Advice } from '../../model/advice.model';
 export class AdviceSignalComponent implements OnInit {
   adviceResult: Observable<any> | undefined;
   adviceList: any[]= []
-  clientName: String = ''
+  clientName: string = ''
+  createDate: string = ''
   constructor(private store: Store<{advice: Advice}>) { }
 
   ngOnInit(): void {
@@ -21,11 +22,7 @@ export class AdviceSignalComponent implements OnInit {
     this.adviceResult.subscribe(advice => {
       this.clientName= advice.adviceDetails.ClientName;
       this.adviceList = advice.adviceDetails.AdviceSignals;
+      this.createDate = this.adviceList[2]?.CreateDate.split('-').reverse().join('-')
     })
-  }
-
-  stringToDate(d: string){
-    var date = d.split('-');
-    return new Date(date[2]+ '-'+date[1]+'-'+date[0])
   }
 }

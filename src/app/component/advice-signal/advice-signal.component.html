@@ -1,7 +1,7 @@
 <div class="container advice-signal">
-    <h2> {{adviceList[2]?.Title }}</h2>
-    <h6> {{ stringToDate(adviceList[2]?.CreateDate) | date: 'd MMMM y' }}</h6>
-    <h6>{{clientName }}</h6>
+    <h2>{{adviceList[2]?.Title }}</h2>
+    <h6>{{ createDate | date: 'd MMMM y' }}</h6>
+    <h6>{{clientName }} </h6>
 
     <div class="row klantge-first">
         <div class="col-sm-4">
