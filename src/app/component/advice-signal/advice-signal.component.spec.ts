@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AdviceSignalComponent } from './advice-signal.component';
 
@@ -9,7 +10,10 @@ describe('AdviceSignalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StoreModule.forRoot({})],
+      imports: [
+        StoreModule.forRoot({}),
+        TranslateModule.forRoot({}),
+      ],
       declarations: [ AdviceSignalComponent ]
     })
     .compileComponents();
