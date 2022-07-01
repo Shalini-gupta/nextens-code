@@ -17,8 +17,8 @@ import { ServiceberichtenComponent } from './component/serviceberichten/serviceb
 import { AdviceSignalComponent } from './component/advice-signal/advice-signal.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { DossierComponent } from './dossier/dossier.component';
-import { OverzichtComponent } from './overzicht/overzicht.component';
+import { DossierComponent } from './component/home/dossier/dossier.component';
+import { OverzichtComponent } from './component/overzicht/overzicht.component';
 
 @NgModule({
   declarations: [

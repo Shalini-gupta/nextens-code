@@ -4,8 +4,8 @@ import { HomeComponent } from './component/home/home.component';
 import { AangiftenComponent } from './component/aangiften/aangiften.component';
 import { ServiceberichtenComponent } from './component/serviceberichten/serviceberichten.component';
 import { AdviceSignalComponent } from './component/advice-signal/advice-signal.component';
-import { DossierComponent } from './dossier/dossier.component';
-import { OverzichtComponent } from './overzicht/overzicht.component';
+import { DossierComponent } from './component/home/dossier/dossier.component';
+import { OverzichtComponent } from './component/overzicht/overzicht.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
