@@ -10,19 +10,17 @@ import { Advice } from '../../model/advice.model';
   styleUrls: ['./advice-signal.component.css']
 })
 export class AdviceSignalComponent implements OnInit {
-  adviceResult: Observable<any> | undefined;
-  adviceList: any[]= []
-  clientName: string = ''
-  createDate: string = ''
+  advice: Observable<Advice> | undefined;
+  clientName: String = ''
   constructor(private store: Store<{advice: Advice}>) { }
 
   ngOnInit(): void {
     this.store.dispatch(loadAdvice());
-    this.adviceResult = this.store.select('advice');
-    this.adviceResult.subscribe(advice => {
-      this.clientName= advice.adviceDetails.ClientName;
-      this.adviceList = advice.adviceDetails.AdviceSignals;
-      this.createDate = this.adviceList[2]?.CreateDate.split('-').reverse().join('-')
-    })
+    this.advice = this.store.select('advice');
+  }
+
+  stringToDate(d: string){
+    var date = d.split('-');
+    return new Date(date[2]+ '-'+date[1]+'-'+date[0])
   }
 }

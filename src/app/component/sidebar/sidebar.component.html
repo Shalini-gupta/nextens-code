@@ -1,9 +1,9 @@
 <div id="mySidebar" class="sidebar">
     <div class="client-detail">
-      <h2>{{(adviceResult | async)?.adviceDetails.ClientName }}</h2>
-      <p>{{ 'BSN' | translate }} {{(adviceResult | async)?.adviceDetails.BsnFi }}</p>
+      <h2>{{(adviceResult | async)?.clientName }}</h2>
+      <p>BSN {{(adviceResult | async)?.bsnFi }}</p>
     </div>
-    <a [routerLink]="['/dossier']">{{ 'Dossier' | translate }}</a>
-    <a [routerLink]="['/']"class="adviessignalen">{{ 'Adviessignalen' | translate }} ({{numberOfAdvice}})</a>
-    <a [routerLink]="['/overzicht']">{{ 'Overzicht' | translate }}</a>
+    <a [routerLink]="['/dossier']">Dossier</a>
+    <a [routerLink]="['/']"class="adviessignalen">Adviessignalen ({{numberOfAdvice}})</a>
+    <a [routerLink]="['/overzicht']">Overzicht</a>
 </div>

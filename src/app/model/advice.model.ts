@@ -1,25 +1,26 @@
 export interface Paramter {
-    ParmName: string;
-    ParmValue: any;
+    parmName: string;
+    parmValue: string;
 }
 
 export interface Klantgegevens {
-    Origin: string;
-    Paramters: Paramter[];
+    origin: string;
+    paramters: Paramter[];
 }
 
 export interface AdviceSignal {
-    CreateDate: string;
-    Title: string;
-    Status: number;
-    Klantgegevens: Klantgegevens;
-    Description: string;
+    id:number;
+    createDate: string;
+    title: string;
+    status: number;
+    klantgegevens: Klantgegevens;
+    description: string;
 }
 
 export interface Advice {
-    ClientName: string;
-    BsnFi: string;
-    AdviceSignals: AdviceSignal[];
+    clientName: string;
+    bsnFi: string;
+    adviceSignals: AdviceSignal[];
 }
 
 

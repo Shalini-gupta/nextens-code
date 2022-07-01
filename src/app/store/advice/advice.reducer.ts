@@ -7,7 +7,7 @@ export const AdviceReducer = createReducer(
     on(loadAdviceSuccess, (state, action) => {
         return {
             ...state,
-            adviceDetails: action.advice,
+            ...action.advice,
         }
     })
 );

@@ -1,25 +1,25 @@
 <div class="container advice-signal">
-    <h2>{{adviceList[2]?.Title}}</h2>
-    <h6>{{createDate | date: 'd MMMM y'}}</h6>
-    <h6>{{clientName}} </h6>
+    <h2> {{ (advice | async)?.adviceSignals?.[0]?.title}}</h2>
+    <!-- <h6> {{ stringToDate((advice | async)?.adviceSignals?.[0]?.createDate)| date: 'd MMMM y' }}</h6> -->
+    <h6>{{ (advice | async)?.clientName }}</h6>
 
     <div class="row klantge-first">
         <div class="col-sm-4">
-            <h4>{{ 'Klangegevens' | translate }}</h4>
+            <h4>Klangegevens</h4>
         </div>
         <div class="col-sm-8">
-            <div class="klantge" *ngFor="let data of adviceList[2]?.Klantgegevens?.Paramters">
-                <div class="klantge-paramname">{{data?.ParmName}}</div>
-                <div>&euro;{{data?.ParmValue}}</div>
+            <div class="klantge" *ngFor="let data of (advice | async)?.adviceSignals?.[0]?.klantgegevens?.paramters">
+                <div class="klantge-paramname">{{data?.parmName}}</div>
+                <div>&euro;{{data?.parmValue}}</div>
             </div>
         </div>
     </div>
     <div class="row klantge-first">
         <div class="col-sm-4">
-            <h4>{{ 'Beschrijving' | translate }}</h4>
+            <h4>Beschrijving</h4>
         </div>
         <div class="col-sm-8">
-            <p innerHTML="{{adviceList[2]?.Description }}"></p>
+            <p innerHTML="{{ (advice | async)?.adviceSignals?.[0]?.description }}"></p>
         </div>
     </div>
     <div class="row">

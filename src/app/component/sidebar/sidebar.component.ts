@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  @Input() numberOfAdvice = Number; 
-  adviceResult: Observable<any> | undefined;
+  @Input() numberOfAdvice : Number | undefined;
+
+
+  adviceResult: Observable<Advice> | undefined;
   constructor(private store: Store<{advice: Advice}>) { }
 
   ngOnInit(): void {
