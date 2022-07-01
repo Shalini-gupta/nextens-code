@@ -11,8 +11,8 @@ import * as _ from 'lodash';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  adviceResult: Observable<Advice> | undefined;
-  // adviceList: Advice = {}
+  adviceResult: Observable<any> | undefined;
+  adviceList: any[] = []
 
   filterAdviceList: any = [];
   yearList : String[] = [];
@@ -25,18 +25,18 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(loadAdvice());
     this.adviceResult = this.store.select('advice');
     this.adviceResult.subscribe(res => {
-      // this.adviceList = res.AdviceSignals;
-      res.AdviceSignals.map((val:any) => {
+      this.adviceList = res.adviceDetails.AdviceSignals;
+      this.adviceList.map((val:any) => {
         this.yearList.push(val.CreateDate.split('-')[2]);
         this.yearUniqueList = _.uniq(this.yearList);
         this.showYear = this.yearUniqueList[0];
-        this.filterData( res.AdviceSignals, this.yearUniqueList[0]);
+        this.filterData(this.adviceList, this.yearUniqueList[0]);
       })
     }) 
   }
 
-  filterData(adviceList: any[], recentYear:String){
-    this.filterAdviceList = adviceList.filter(val => {
+  filterData(adviceList:any, recentYear:String){
+    this.filterAdviceList = adviceList.filter((val:any) => {
       return recentYear == val.CreateDate.split('-')[2];
     })
   }
@@ -48,9 +48,9 @@ export class HomeComponent implements OnInit {
 
   onChangeYear(event: any){
     this.showYear = event.target.value
-    // this.filterAdviceList = this.adviceList.filter(val => {
-    //   return event.target.value == val.CreateDate.split('-')[2];
-    // })
+    this.filterAdviceList = this.adviceList.filter(val => {
+      return event.target.value == val.CreateDate.split('-')[2];
+    })
   }
 
 }
