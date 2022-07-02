@@ -22,26 +22,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(loadAdvice());
-
     this.advice = this.store.select('advice');
+
     this.advice.subscribe((advice) => {
-      console.log('subscribed res :: ', advice);
       this.adviceSignals = advice.adviceSignals;
-      console.log('advice signals', this.adviceSignals);
-
-
       this.adviceSignals?.map(adviceSignal => {
         this.yearList.push(adviceSignal?.createDate.split('-')[2]);
         this.yearUniqueList = _.uniq(this.yearList);
         this.showYear = this.yearUniqueList[0];
         this.filterData(this.adviceSignals, this.yearUniqueList[0]);
-
       });
-
-
-
-      
-          });
+    });
   }
 
   filterData(adviceList: AdviceSignal[], recentYear: String) {
