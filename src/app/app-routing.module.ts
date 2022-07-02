@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'aangiften', component: AangiftenComponent },
   { path: 'serviceberichten', component: ServiceberichtenComponent },
-  { path: 'advice-signal', component: AdviceSignalComponent },
+  { path: 'advice-signal/:adviceSignalId', component: AdviceSignalComponent , pathMatch: 'full'},
   { path: 'dossier', component: DossierComponent },
   { path: 'overzicht', component: OverzichtComponent },
 ];

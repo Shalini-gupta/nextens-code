@@ -19,10 +19,10 @@
         <p>{{filteredAdviceSignals.length}} adviessignalen</p>
       </div>
       <div class="advies-list" *ngFor="let advice of filteredAdviceSignals">
-        <span>{{ stringToDate(advice.createDate) | date: 'd MMM y'}}</span>
-        <p [routerLink]="['advice-signal']" *ngIf="advice.status == 100" class="advies-text advice-bold">
+        <span>{{ stringToDate(advice.createDate) | date: 'd MMM y'}} {{ advice.id}}</span>
+        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 100" class="advies-text advice-bold">
           {{advice.title}}</p>
-        <p [routerLink]="['advice-signal']" *ngIf="advice.status == 200" class="advies-text">{{advice.title}}</p>
+        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 200" class="advies-text">{{advice.title}}</p>
       </div>
     </div>
   </div>

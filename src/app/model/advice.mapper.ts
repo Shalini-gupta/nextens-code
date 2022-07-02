@@ -1,4 +1,3 @@
-import { map } from 'lodash';
 import {
   AdviceData,
   AdviceSignalData,
@@ -25,7 +24,7 @@ export class AdviceMapper {
   static fromAdviceSignalsData(data: AdviceSignalData): AdviceSignal {
     if (data) {
       return {
-        id: Math.floor(Math.random() * 100000),
+        id: +data.CreateDate.split('-').join(''),
         createDate: data.CreateDate,
         title: data.Title,
         status: data.Status,

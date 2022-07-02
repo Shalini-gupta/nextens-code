@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { Store } from '@ngrx/store';
+
 import { Observable } from 'rxjs';
 import { loadAdvice } from '../../store/advice/advice.action';
-import { Advice } from '../../model/advice.model';
+import { Advice, AdviceSignal } from '../../model/advice.model';
 
 @Component({
   selector: 'app-advice-signal',
@@ -11,16 +13,25 @@ import { Advice } from '../../model/advice.model';
 })
 export class AdviceSignalComponent implements OnInit {
   advice: Observable<Advice> | undefined;
-  clientName: String = ''
-  constructor(private store: Store<{advice: Advice}>) { }
+  adviceSignal: AdviceSignal | undefined;
+
+  constructor(private route: ActivatedRoute, private store: Store<{ advice: Advice }>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(loadAdvice());
     this.advice = this.store.select('advice');
+    let adviceSignalId = this.route.snapshot.paramMap.get('adviceSignalId');
+    this.advice.subscribe((advice) => {
+      this.adviceSignal = advice.adviceSignals?.filter((adviceSignal) => {
+        if (adviceSignalId != null) {
+          return +adviceSignalId == adviceSignal.id;
+        }
+        return false;
+      })?.[0];
+    })
   }
 
-  stringToDate(d: string){
+  stringToDate(d: string) {
     var date = d.split('-');
-    return new Date(date[2]+ '-'+date[1]+'-'+date[0])
+    return new Date(date[2] + '-' + date[1] + '-' + date[0])
   }
 }
