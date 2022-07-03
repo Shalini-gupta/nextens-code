@@ -14,9 +14,9 @@ describe('SidebarComponent', () => {
         StoreModule.forRoot({}),
         TranslateModule.forRoot({}),
       ],
-      declarations: [ SidebarComponent ]
+      declarations: [SidebarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

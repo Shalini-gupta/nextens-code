@@ -1,173 +1,200 @@
 /* You can add global styles to this file, and also import other style files */
 
-  .bg-blue{
-    background-color:  #0b56b2;
-  }
-  .navbar-light .navbar-nav .nav-link{
-    color: #ffffffb3;
-    padding-left: 0;
-    padding-right: 0;
+.bg-blue {
+  background-color: #0b56b2;
+}
 
-  }
-  .navbar-light .navbar-nav .active>.nav-link{
-    color: #fff;
-    border-bottom: 3px solid #fff;
-    padding-bottom: 0px;
-  }
-  .navbar-light .navbar-nav .nav-link:hover{
-      color:#fff
-  }
-  .navbar{
-    padding: 0;
-    height: 50px;
-  }
-  .nav-item{
-    padding: 0.5rem 1rem;
-  }
-  .container{
-    position: absolute;
-  }
-  .sidebar {
-    height: 100%;
-    width: 250px;
-    left: 0;
-    background-color:#f5f9fe ;
-    position: fixed;
-    z-index: 3;
-    overflow-x: hidden;
-    transition: .5s;
-    padding-top: 60px;
-  }
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffffb3;
+  padding-left: 0;
+  padding-right: 0;
 
-  .sidebar .adviessignalen{
-    background-color: #f5f9fe;
-    border-left: 3px solid #0a4fa3;
-    margin-left: 2px;
-    color: #556476;
-    font-weight: 400;
-    text-decoration: none;
-  }
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    display: block;
-    transition: 0.3s;
-    background-color: #fff;
-    color: #a5a9af !important;
-    cursor: pointer;
-  }
-  
-  .sidebar a:hover {
-    text-decoration: none;
-    color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: #444;
-  }
-  
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
+}
 
-  .advice-heading{
-    padding-top: 30px;
-    border-bottom: 1px solid #e5e8eb;
-    padding-bottom: 30px;
-    color: #556476;
-    text-transform: capitalize;
-  }
-  select.form-control{
-    display:inline-block;
-    width:auto;
-    margin-left: 15px;
-  }
-  .year{
-    color: #2c6dbd;
-  }
-  .advice-list{
-    padding-top: 0;
-  }
-  .advice-list span{
-    font-size: 12px;
-    color: #a5a9af;
-  }
-  .advice-text{
-    border-bottom: 1px solid #e7eaed;
-    padding-bottom: 20px;
-    font-size: 17px;
-    font-weight: 500;
-    padding-top: 8px;
-    color: #5d5e5f;
-  }
-  .advice-text:hover{
-    cursor: pointer;
-  }
-  .advice-year p {
-    margin-bottom: 3rem;
-    color: #a5a9af;
-  }
-  .advice-bold{
-    font-weight: bold;
-  }
-  .advice-signal h2, h6{
-    margin: 30px 10px;
-  }
-  .advice-content{
-    padding-top: 60px;
-  }
-  .klantge-first{
-    border-bottom: 1px solid #dedede;
-    padding: 50px 10px;
-  }
-  .btn-venster{
-    color: #3b9dff;
-    background-color: #fff;
-    border: 2px solid #3b9dff;
-    position: absolute;
-    right: 0;
-    margin-top:20px;
-    font-weight: 500;
-    padding: 10px 30px;
-  }
-  .btn-venster:hover{
-    color: #3b9dff;
-    background-color: #fff;
-  }
-  .client-detail{
-    padding: 20px 30px;
-    border-bottom: 1px solid #ccc;
-    background: #fff;
-  }
-  .client-detail h2{
-    font-size: 24px;
-    color: #556476;
-  }
-  .client-detail p{
-    font-size: 14px;
-    color: #a5a9af;
-  }
-  .klantge{
-    display: flex;
-  }
-  .klantge-paramname{
-    width: 420px;
-    font-weight: 700;
-  }
+.navbar-light .navbar-nav .active>.nav-link {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 0px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #fff
+}
+
+.navbar {
+  padding: 0;
+  height: 50px;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  position: absolute;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  left: 0;
+  background-color: #f5f9fe;
+  position: fixed;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: .5s;
+  padding-top: 60px;
+}
+
+.sidebar .adviessignalen {
+  background-color: #f5f9fe;
+  border-left: 3px solid #0a4fa3;
+  margin-left: 2px;
+  color: #556476;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  display: block;
+  transition: 0.3s;
+  background-color: #fff;
+  color: #a5a9af !important;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.advice-heading {
+  padding-top: 30px;
+  border-bottom: 1px solid #e5e8eb;
+  padding-bottom: 30px;
+  color: #556476;
+  text-transform: capitalize;
+}
+
+select.form-control {
+  display: inline-block;
+  width: auto;
+  margin-left: 15px;
+}
+
+.year {
+  color: #2c6dbd;
+}
+
+.advice-list {
+  padding-top: 0;
+}
+
+.advice-list span {
+  font-size: 12px;
+  color: #a5a9af;
+}
+
+.advice-text {
+  border-bottom: 1px solid #e7eaed;
+  padding-bottom: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  padding-top: 8px;
+  color: #5d5e5f;
+}
+
+.advice-text:hover {
+  cursor: pointer;
+}
+
+.advice-year p {
+  margin-bottom: 3rem;
+  color: #a5a9af;
+}
+
+.advice-bold {
+  font-weight: bold;
+}
+
+.advice-signal h2,
+h6 {
+  margin: 30px 10px;
+}
+
+.advice-content {
+  padding-top: 60px;
+}
+
+.klantge-first {
+  border-bottom: 1px solid #dedede;
+  padding: 50px 10px;
+}
+
+.btn-venster {
+  color: #3b9dff;
+  background-color: #fff;
+  border: 2px solid #3b9dff;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+}
+
+.btn-venster:hover {
+  color: #3b9dff;
+  background-color: #fff;
+}
+
+.client-detail {
+  padding: 20px 30px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+
+.client-detail h2 {
+  font-size: 24px;
+  color: #556476;
+}
+
+.client-detail p {
+  font-size: 14px;
+  color: #a5a9af;
+}
+
+.klantge {
+  display: flex;
+}
+
+.klantge-paramname {
+  width: 420px;
+  font-weight: 700;
+}

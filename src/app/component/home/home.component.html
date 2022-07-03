@@ -20,9 +20,10 @@
       </div>
       <div class="advice-list" *ngFor="let advice of filteredAdviceSignals">
         <span>{{ stringToDate(advice.createDate) | date: 'd MMM y'}}</span>
-        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 100" class="advice-text advice-bold">
+        <p [routerLink]="['advice-signal', advice.id]" *ngIf="advice.status == 100" class="advice-text advice-bold">
           {{advice.title}}</p>
-        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 200" class="advice-text">{{advice.title}}</p>
+        <p [routerLink]="['advice-signal', advice.id]" *ngIf="advice.status == 200" class="advice-text">{{advice.title}}
+        </p>
       </div>
     </div>
   </div>

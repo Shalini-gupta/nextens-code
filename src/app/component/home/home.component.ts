@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   yearUniqueList: String[] = [];
   showYear: String = '';
 
-  constructor(private store: Store<{ advice: Advice }>) {}
+  constructor(private store: Store<{ advice: Advice }>) { }
 
   ngOnInit(): void {
     this.store.dispatch(loadAdvice());

@@ -8,9 +8,9 @@ describe('DossierComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DossierComponent ]
+      declarations: [DossierComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

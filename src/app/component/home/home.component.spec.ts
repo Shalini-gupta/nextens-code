@@ -14,9 +14,9 @@ describe('HomeComponent', () => {
         StoreModule.forRoot({}),
         TranslateModule.forRoot()
       ],
-      declarations: [ HomeComponent ]
+      declarations: [HomeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

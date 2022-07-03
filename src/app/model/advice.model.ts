@@ -9,7 +9,7 @@ export interface Klantgegevens {
 }
 
 export interface AdviceSignal {
-    id:number;
+    id: number;
     createDate: string;
     title: string;
     status: number;

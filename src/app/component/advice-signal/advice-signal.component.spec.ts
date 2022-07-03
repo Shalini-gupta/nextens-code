@@ -16,9 +16,9 @@ describe('AdviceSignalComponent', () => {
         StoreModule.forRoot({}),
         TranslateModule.forRoot({}),
       ],
-      declarations: [ AdviceSignalComponent ]
+      declarations: [AdviceSignalComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

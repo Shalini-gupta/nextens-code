@@ -12,9 +12,9 @@ describe('NavbarComponent', () => {
       imports: [
         TranslateModule.forRoot({}),
       ],
-      declarations: [ NavbarComponent ]
+      declarations: [NavbarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
