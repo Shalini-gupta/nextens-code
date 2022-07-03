@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
+import { loadAdvice } from '../../store/advice/advice.action';
 import { Advice, AdviceSignal } from '../../model/advice.model';
 
 @Component({
@@ -17,6 +18,7 @@ export class AdviceSignalComponent implements OnInit {
   constructor(private route: ActivatedRoute, private store: Store<{ advice: Advice }>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(loadAdvice());
     this.advice = this.store.select('advice');
     let adviceSignalId = this.route.snapshot.paramMap.get('adviceSignalId');
     this.advice.subscribe((advice) => {
