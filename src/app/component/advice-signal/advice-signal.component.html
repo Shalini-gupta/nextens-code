@@ -3,7 +3,7 @@
     <h6>{{ (advice | async)?.clientName }}</h6>
     <div class="row klantge-first">
         <div class="col-sm-4">
-            <h4>Klangegevens</h4>
+            <h4>{{'klangegevens' | translate}}</h4>
         </div>
         <div class="col-sm-8">
             <div class="klantge" *ngFor="let data of adviceSignal?.klantgegevens?.paramters">
@@ -14,12 +14,13 @@
     </div>
     <div class="row klantge-first">
         <div class="col-sm-4">
-            <h4>Beschrijving</h4>
+            <h4>{{'beschrijving' | translate}}</h4>
         </div>
         <div class="col-sm-8">
             <p innerHTML="{{ adviceSignal?.description }}"></p>
         </div>
     </div>
     <div class="row">
-        <button type="button" [routerLink]="['/']" class="btn btn-venster">Venster sluiten</button>
+        <button type="button" [routerLink]="['/']" class="btn btn-venster">{{'vensterSluiten' | translate}}</button>
     </div>
+</div>

@@ -4,25 +4,25 @@
     <div class="col-sm-3">
       <app-sidebar [numberOfAdvice]="filteredAdviceSignals.length"></app-sidebar>
     </div>
-    <div class="col-sm-9 advies-content">
-      <h4 class="advies-heading">Adviessignalen </h4>
-      <div class="form-group advies-heading">
+    <div class="col-sm-9 advice-content">
+      <h4 class="advice-heading">{{'adviessignalen' | translate}} </h4>
+      <div class="form-group advice-heading">
         <span style="white-space: nowrap">
-          <label for="year">Filter op Jaar</label>
+          <label for="year">{{'filterOpJaar' | translate}}</label>
           <select id="year" class="form-control" (change)="onChangeYear($event)">
             <option *ngFor="let value of yearUniqueList" value="{{value}}">{{value}}</option>
           </select>
         </span>
       </div>
-      <div class="advies-year">
+      <div class="advice-year">
         <h4 class="year">{{showYear}}</h4>
-        <p>{{filteredAdviceSignals.length}} adviessignalen</p>
+        <p>{{filteredAdviceSignals.length}} {{'adviessignalen' | translate}}</p>
       </div>
-      <div class="advies-list" *ngFor="let advice of filteredAdviceSignals">
-        <span>{{ stringToDate(advice.createDate) | date: 'd MMM y'}} {{ advice.id}}</span>
-        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 100" class="advies-text advice-bold">
+      <div class="advice-list" *ngFor="let advice of filteredAdviceSignals">
+        <span>{{ stringToDate(advice.createDate) | date: 'd MMM y'}}</span>
+        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 100" class="advice-text advice-bold">
           {{advice.title}}</p>
-        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 200" class="advies-text">{{advice.title}}</p>
+        <p [routerLink]="['advice-signal', advice.id]"  *ngIf="advice.status == 200" class="advice-text">{{advice.title}}</p>
       </div>
     </div>
   </div>

@@ -1,13 +1,13 @@
 {
-    "Klanten": "Klanten",
-    "Aangiften": "Aangiften",
-    "Serviceberichten": "Serviceberichten",
-    "Dossier": "Dossier",
-    "Overzicht": "Overzicht",
-    "Adviessignalen": "Adviessignalen",
-    "BSN": "BSN",
-    "Filter op Jaar": "Filter op Jaar",
+    "klanten": "Klanten",
+    "aangiften": "Aangiften",
+    "serviceberichten": "Serviceberichten",
+    "dossier": "Dossier",
+    "overzicht": "Overzicht",
     "adviessignalen": "adviessignalen",
-    "Klangegevens": "Klangegevens",
-    "Beschrijving": "Beschrijving"   
+    "bsn": "BSN",
+    "filterOpJaar": "Filter op Jaar",
+    "klangegevens": "Klangegevens",
+    "beschrijving": "Beschrijving",
+    "vensterSluiten": "Venster sluiten"
 }
