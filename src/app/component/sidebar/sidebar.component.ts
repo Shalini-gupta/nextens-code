@@ -11,12 +11,11 @@ import { Observable } from 'rxjs';
 export class SidebarComponent implements OnInit {
   @Input() numberOfAdvice: Number | undefined;
 
-
-  adviceResult: Observable<Advice> | undefined;
+  advice: Observable<Advice> | undefined;
   constructor(private store: Store<{ advice: Advice }>) { }
 
   ngOnInit(): void {
-    this.adviceResult = this.store.select('advice');
+    this.advice = this.store.select('advice');
   }
 
 }

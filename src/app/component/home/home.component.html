@@ -10,12 +10,12 @@
         <span style="white-space: nowrap">
           <label for="year">{{'filterOpJaar' | translate}}</label>
           <select id="year" class="form-control" (change)="onChangeYear($event)">
-            <option *ngFor="let value of yearUniqueList" value="{{value}}">{{value}}</option>
+            <option *ngFor="let year of yearList" value="{{year}}">{{year}}</option>
           </select>
         </span>
       </div>
       <div class="advice-year">
-        <h4 class="year">{{showYear}}</h4>
+        <h4 class="year">{{selectedYear}}</h4>
         <p>{{filteredAdviceSignals.length}} {{'adviessignalen' | translate}}</p>
       </div>
       <div class="advice-list" *ngFor="let advice of filteredAdviceSignals">

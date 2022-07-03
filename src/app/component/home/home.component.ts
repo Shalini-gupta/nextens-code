@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
   adviceSignals: AdviceSignal[] = [];
   filteredAdviceSignals: AdviceSignal[] = [];
   yearList: String[] = [];
-  yearUniqueList: String[] = [];
-  showYear: String = '';
+  selectedYear: String = '';
 
   constructor(private store: Store<{ advice: Advice }>) { }
 
@@ -26,18 +25,21 @@ export class HomeComponent implements OnInit {
 
     this.advice.subscribe((advice) => {
       this.adviceSignals = advice.adviceSignals;
-      this.adviceSignals?.map(adviceSignal => {
-        this.yearList.push(adviceSignal?.createDate.split('-')[2]);
-        this.yearUniqueList = _.uniq(this.yearList);
-        this.showYear = this.yearUniqueList[0];
-        this.filterData(this.adviceSignals, this.yearUniqueList[0]);
-      });
+      let years: string[] = []
+      if (this.adviceSignals) {
+        this.adviceSignals.map(adviceSignal => {
+          years.push(adviceSignal?.createDate.split('-')[2]);
+        });
+        this.yearList = _.uniq(years);
+        this.selectedYear = this.yearList[0];
+        this.filterAdviceSignal(this.adviceSignals, this.yearList[0]);
+      }
     });
   }
 
-  filterData(adviceList: AdviceSignal[], recentYear: String) {
+  filterAdviceSignal(adviceList: AdviceSignal[], selectedYear: String) {
     this.filteredAdviceSignals = adviceList.filter((adviceSignal) => {
-      return recentYear == adviceSignal.createDate.split('-')[2];
+      return selectedYear == adviceSignal.createDate.split('-')[2];
     });
   }
 
@@ -47,7 +49,7 @@ export class HomeComponent implements OnInit {
   }
 
   onChangeYear(event: any) {
-    this.showYear = event.target.value;
+    this.selectedYear = event.target.value;
     this.filteredAdviceSignals = this.adviceSignals.filter((val) => {
       return event.target.value == val.createDate.split('-')[2];
     });

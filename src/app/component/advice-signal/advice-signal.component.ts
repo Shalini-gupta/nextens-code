@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Store } from '@ngrx/store';
-
 import { Observable } from 'rxjs';
-import { loadAdvice } from '../../store/advice/advice.action';
+
 import { Advice, AdviceSignal } from '../../model/advice.model';
 
 @Component({
@@ -30,8 +29,12 @@ export class AdviceSignalComponent implements OnInit {
     })
   }
 
-  stringToDate(d: string) {
-    var date = d.split('-');
-    return new Date(date[2] + '-' + date[1] + '-' + date[0])
+  stringToDate(dateString: string | undefined): Date | undefined {
+    if (dateString) {
+      var date = dateString.split('-');
+      return new Date(date[2] + '-' + date[1] + '-' + date[0])
+    } else {
+      return;
+    }
   }
 }

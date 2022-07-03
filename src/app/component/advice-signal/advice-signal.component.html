@@ -1,14 +1,15 @@
 <div class="container advice-signal">
     <h2> {{ adviceSignal?.title }}</h2>
+    <h6>{{ stringToDate(adviceSignal?.createDate) | date: 'd MMMM y' }}</h6>
     <h6>{{ (advice | async)?.clientName }}</h6>
     <div class="row klantge-first">
         <div class="col-sm-4">
             <h4>{{'klangegevens' | translate}}</h4>
         </div>
         <div class="col-sm-8">
-            <div class="klantge" *ngFor="let data of adviceSignal?.klantgegevens?.paramters">
-                <div class="klantge-paramname">{{data?.parmName}}</div>
-                <div>&euro;{{data?.parmValue}}</div>
+            <div class="klantge" *ngFor="let param of adviceSignal?.klantgegevens?.paramters">
+                <div class="klantge-paramname">{{param?.parmName}}</div>
+                <div>&euro;{{param?.parmValue}}</div>
             </div>
         </div>
     </div>
